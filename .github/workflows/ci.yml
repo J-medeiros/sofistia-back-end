@@ -17,6 +17,9 @@ jobs:
           php-version: '8.4'
           extensions: mbstring, pdo, pdo_mysql
           tools: composer
+          
+          - name: Validate Composer Autoload
+            run: composer dump-autoload -o
 
       - name: Install dependencies
         run: composer install --no-progress --prefer-dist
